@@ -1238,6 +1238,21 @@ header,
   }
 }
 
+/* Optional: stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-content {
+    order: 1;
+  }
+
+  .home-image {
+    order: 2;
+  }
+}
 
 /* ========== MOBILE-ONLY STYLES ========== */
 @media (max-width: 768px) {
@@ -1320,12 +1335,11 @@ body {
   background-color: #000;
   color: #fff;
 }
-
   .photo-wrapper {
     display: none !important;
   }
-}
 
+}
 
 
   </style>
