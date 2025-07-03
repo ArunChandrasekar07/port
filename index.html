@@ -1381,6 +1381,89 @@ body {
   color: #fff;
 }
 
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    padding: 0 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+  }
+
+  #navbar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  #navbar.active {
+    display: flex;
+  }
+
+  #navbar a {
+    padding: 12px 0;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    text-decoration: none;
+  }
+
+  main {
+    padding-top: 80px; /* Push below fixed header */
+  }
+
+  .home-container {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-left, .photo-wrapper {
+    width: 100%;
+    align-items: center;
+  }
+
+  .button-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
   </style>
 </head>
@@ -1422,7 +1505,7 @@ body {
   
     <!-- Left Side -->
     <div class="home-left">
-      <h1 class="shine-text fade-slide-up fade-delay-1">Hi, <span >I'm ARUNn</span></h1>
+      <h1 class="shine-text fade-slide-up fade-delay-1">Hi, <span >I'm ARUN</span></h1>
       <h2 class="title fade-slide-up fade-delay-2">I'm a <span id="typed-role"></span></h2>
       <p class="subtitle fade-slide-up fade-delay-3">A passionate developer crafting modern web experiences.</p>
       <div class="button-row fade-slide-up fade-delay-4">
@@ -1712,6 +1795,21 @@ body {
   });
 </script>
 
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("navbar");
+    nav.classList.toggle("active");
+  }
+
+  // Auto close navbar after clicking link
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("#navbar a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("active");
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
