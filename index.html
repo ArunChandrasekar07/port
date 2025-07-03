@@ -1220,6 +1220,22 @@ header,
   height: auto;
   border-radius: 10px;
 }
+
+/* Optional: stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-content {
+    order: 1;
+  }
+
+  .home-image {
+    order: 2;
+  }
+}/* Mobile Responsive Fix */
 @media (max-width: 768px) {
   * {
     box-sizing: border-box;
@@ -1230,9 +1246,6 @@ header,
     padding: 0;
     overflow-x: hidden;
     max-width: 100vw;
-  }
-
-  body {
     font-family: "Segoe UI", sans-serif;
     background-color: #000;
     color: #fff;
@@ -1241,6 +1254,7 @@ header,
 
   header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
@@ -1258,6 +1272,7 @@ header,
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    z-index: 1001;
   }
 
   .menu-toggle span {
@@ -1295,43 +1310,34 @@ header,
   }
 
   main {
-    padding-top: 80px;
-  }
-
-  /* Limit inner content width to 780px centered */
-  .wrapper {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-  .intro, .buttons, footer {
-    text-align: center;
+    padding-top: 80px; /* adjust based on header */
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   footer {
-    margin-top: 40px;
-    padding: 20px 0;
-    background: #000;
-  }
-
-  footer .social-icons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
+    padding: 20px;
+    background-color: #000;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 997;
   }
 
-  footer .social-icons a {
+  footer a {
     color: white;
-    font-size: 22px;
+    font-size: 24px;
     text-decoration: none;
   }
 }
-
 </style>
 </head>
 <body>
-  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <canvas id="particle-bg"></canvas>
@@ -1520,13 +1526,6 @@ header,
       
 </footer>
 
-<footer>
-  <div class="social-icons">
-    <a href="https://github.com/yourname" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/yourname" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://instagram.com/yourname" target="_blank"><i class="fab fa-instagram"></i></a>
-  </div>
-</footer>
 
 <!-- AOS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -1667,6 +1666,7 @@ header,
 </script>
 
 <!-- Your HTML content above -->
+
 <script>
   const toggleBtn = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('#navbar');
