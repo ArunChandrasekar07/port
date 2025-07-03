@@ -1302,10 +1302,77 @@ header,
   }
 }
 
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure header and hamburger are fixed on top for mobile */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+/* Hamburger style (if not already present) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* Make sure body content starts below header */
+main {
+  padding-top: 80px;
+}
+
+/* Responsive hamburger visible */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  #navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #111;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+  }
+
+  #navbar.active {
+    display: flex;
+  }
+
+  #navbar a {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
 
   </style>
 </head>
 <body>
+  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <canvas id="particle-bg"></canvas>
@@ -1619,9 +1686,21 @@ header,
 </script>
 <script>
   function toggleMenu() {
-    document.getElementById('navbar').classList.toggle('active');
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
   }
+
+  // Close menu when any link is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("#navbar a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("active");
+      });
+    });
+  });
 </script>
+
 
 </body>
 </html>
