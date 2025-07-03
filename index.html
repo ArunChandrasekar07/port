@@ -7,88 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    @media (max-width: 768px) {
-  * {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-@media (max-width: 768px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000; /* or your dark theme */
-    z-index: 999;
-  }
-
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-  }
-
-  .menu-toggle span {
-    display: block;
-    height: 3px;
-    width: 25px;
-    background-color: white;
-    border-radius: 2px;
-  }
-
-  #navbar {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #000;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    z-index: 998;
-  }
-
-  #navbar.active {
-    display: flex;
-  }
-
-  #navbar a {
-    color: white;
-    padding: 15px 0;
-    font-size: 18px;
-    text-decoration: none;
-    width: 100%;
-    text-align: center;
-  }
-
-  main {
-    padding-top: 80px;
-  }
-}
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #000;
-  color: #fff;
-}
-
-}
     body {
       margin: 0;
       padding: 0;
@@ -1127,6 +1045,189 @@ header,
       top: 0;
       z-index: 10;
     }
+
+/* Logo letter-by-letter animation */
+.name-header {
+  font-size: 1.1rem; /* Match navbar size */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  gap: 1px;
+}
+
+.name-header span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInLetter 0.4s ease forwards;
+}
+
+.name-header span:nth-child(1) { animation-delay: 0.1s; }
+.name-header span:nth-child(2) { animation-delay: 0.2s; }
+.name-header span:nth-child(3) { animation-delay: 0.3s; }
+.name-header span:nth-child(4) { animation-delay: 0.4s; }
+.name-header span:nth-child(5) { animation-delay: 0.5s; } /* space */
+.name-header span:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInLetter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar styles */
+#navbar a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  padding: 5px 0;
+  margin: 0 12px;
+  transition: color 0.3s;
+}
+
+#navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: var(--theme-color);
+  transition: width 0.3s ease-in-out;
+}
+
+#navbar a:hover::after {
+  width: 100%;
+}
+
+#navbar a:hover {
+  color: var(--theme-color);
+}
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 30px;
+  gap: 30px;
+  flex-wrap: wrap; /* Important for mobile */
+}
+
+.home-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.home-image {
+  flex: 1;
+  text-align: center;
+  min-width: 280px;
+}
+
+.home-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Optional: stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-content {
+    order: 1;
+  }
+
+  .home-image {
+    order: 2;
+  }
+}
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+  * {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000; /* or your dark theme */
+    z-index: 999;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  #navbar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 998;
+  }
+
+  #navbar.active {
+    display: flex;
+  }
+
+  #navbar a {
+    color: white;
+    padding: 15px 0;
+    font-size: 18px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  main {
+    padding-top: 80px;
+  }
+  html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+}
+
     .social-icons {
   display: flex;
   gap: 20px;
@@ -1217,93 +1318,6 @@ header,
 :root {
   --theme-color: #00ffd5;
 }
-
-/* Logo letter-by-letter animation */
-.name-header {
-  font-size: 1.1rem; /* Match navbar size */
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: flex;
-  gap: 1px;
-}
-
-.name-header span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInLetter 0.4s ease forwards;
-}
-
-.name-header span:nth-child(1) { animation-delay: 0.1s; }
-.name-header span:nth-child(2) { animation-delay: 0.2s; }
-.name-header span:nth-child(3) { animation-delay: 0.3s; }
-.name-header span:nth-child(4) { animation-delay: 0.4s; }
-.name-header span:nth-child(5) { animation-delay: 0.5s; } /* space */
-.name-header span:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes fadeInLetter {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Navbar styles */
-#navbar a {
-  position: relative;
-  text-decoration: none;
-  color: white;
-  padding: 5px 0;
-  margin: 0 12px;
-  transition: color 0.3s;
-}
-
-#navbar a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 0%;
-  background-color: var(--theme-color);
-  transition: width 0.3s ease-in-out;
-}
-
-#navbar a:hover::after {
-  width: 100%;
-}
-
-#navbar a:hover {
-  color: var(--theme-color);
-}
-.home {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px 30px;
-  gap: 30px;
-  flex-wrap: wrap; /* Important for mobile */
-}
-
-.home-content {
-  flex: 1;
-  min-width: 280px;
-}
-
-.home-image {
-  flex: 1;
-  text-align: center;
-  min-width: 280px;
-}
-
-.home-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-
 
 
   </style>
@@ -1635,6 +1649,28 @@ header,
     });
   });
 </script>
+
+<!-- Your HTML content above -->
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("navbar");
+    nav.classList.toggle("active");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("#navbar a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("active");
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>
 
 </body>
 </html>
