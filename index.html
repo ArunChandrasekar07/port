@@ -1659,23 +1659,28 @@ body {
   window.addEventListener("resize", draw);
 </script>
 <script>
-  // Only attach toggle on mobile (≤768px)
-    function toggleMenu() {
-      if (window.innerWidth <= 768) {
+  // Toggle menu only for mobile
+  function toggleMenu() {
+    if (window.innerWidth <= 768) {
       const nav = document.getElementById("navbar");
       nav.classList.toggle("active");
     }
+  }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const links = document.querySelectorAll("#navbar a");
-      links.forEach(link => {
-        link.addEventListener("click", () => {
-          document.getElementById("navbar").classList.remove("active");
-        });
+  // Auto-close menu when a link is clicked
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("#navbar a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        const nav = document.getElementById("navbar");
+        if (nav.classList.contains("active")) {
+          nav.classList.remove("active");
+        }
       });
     });
-  }
+  });
 </script>
+
 
 
 </body>
