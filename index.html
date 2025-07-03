@@ -1642,25 +1642,22 @@ header,
   window.addEventListener("resize", draw);
 </script>
 
-
 <script>
-  // Only attach toggle on mobile (≤768px)
-  if (window.innerWidth <= 768) {
-    function toggleMenu() {
-      const nav = document.getElementById("navbar");
-      nav.classList.toggle("active");
-    }
+  function toggleMenu() {
+    const nav = document.getElementById("navbar");
+    nav.classList.toggle("active");
+  }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const links = document.querySelectorAll("#navbar a");
-      links.forEach(link => {
-        link.addEventListener("click", () => {
-          document.getElementById("navbar").classList.remove("active");
-        });
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("#navbar a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("active");
       });
     });
-  }
+  });
 </script>
+
 
 </body>
 </html>
