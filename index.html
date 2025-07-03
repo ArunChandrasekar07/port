@@ -1362,11 +1362,136 @@ body {
   }
 
 }
+.contact-container {
+  padding: 100px 20px;
+  color: #fff;
+  background: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-content {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 213, 0.2);
+  border-radius: 16px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.05);
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-left h1 {
+  font-size: 2.5rem;
+  color: #00ffd5;
+  margin-bottom: 20px;
+}
+
+.contact-left p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.contact-info i {
+  color: #00ffd5;
+  font-size: 1.2rem;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  font-size: 1.3rem;
+  color: #00ffd5;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: white;
+}
+
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-right input,
+.contact-right textarea {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00ffd5;
+  color: white;
+}
+
+.contact-right input::placeholder,
+.contact-right textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ffd5;
+}
+
+.contact-right textarea {
+  resize: none;
+  height: 120px;
+}
+
+.contact-right button {
+  padding: 12px 20px;
+  background: #00ffd5;
+  border: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.contact-right button:hover {
+  background: #00bfa5;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+}
 
 
   </style>
 </head>
 <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <canvas id="particle-bg"></canvas>
@@ -1533,16 +1658,32 @@ body {
     <a class="btn" href="#contact">Let's Work Together</a>
   </section>
 
-  <!-- Contact -->
-  <section class="section" id="contact" data-aos="fade-up">
-    <h1>Contact Me</h1>
-    <form action="submit.php" method="post">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
+<section class="contact-container" id="contact" data-aos="fade-up">
+  <div class="contact-content">
+    <div class="contact-left">
+      <h1>Let's Connect</h1>
+      <p>I’d love to hear from you. Whether you have a question or just want to say hi, feel free to drop a message!</p>
+      <div class="contact-info">
+        <div><i class="fas fa-envelope"></i><span>yourmail@example.com</span></div>
+        <div><i class="fas fa-phone-alt"></i><span>+91 9876543210</span></div>
+        <div><i class="fas fa-map-marker-alt"></i><span>Chennai, India</span></div>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-right" method="POST" action="submit.php">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+      <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
     </form>
-  </section>
+  </div>
+</section>
+
 
 </main>
 
