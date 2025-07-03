@@ -1362,53 +1362,48 @@ body {
   }
 
 }
-.contact-container {
-  padding: 100px 20px;
-  color: #fff;
+
+.contact-section {
+  padding: 100px 30px;
+  color: white;
+  text-align: center;
   background: transparent;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
-.contact-content {
+.contact-heading {
+  font-size: 3rem;
+  color: #00ffd5;
+  margin-bottom: 10px;
+}
+
+.contact-subtext {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.contact-layout {
   display: flex;
-  max-width: 1000px;
-  width: 100%;
-  gap: 50px;
   flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
   align-items: flex-start;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(0, 255, 213, 0.2);
-  border-radius: 16px;
-  padding: 40px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0, 255, 213, 0.05);
+  animation: fadeInUp 1s ease;
 }
 
-.contact-left {
+.contact-info {
   flex: 1;
   min-width: 280px;
-}
-
-.contact-left h1 {
-  font-size: 2.5rem;
-  color: #00ffd5;
-  margin-bottom: 20px;
-}
-
-.contact-left p {
+  text-align: left;
   font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 30px;
-  line-height: 1.6;
 }
 
-.contact-info div {
+.contact-info p {
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 15px;
   color: #ccc;
 }
 
@@ -1417,82 +1412,79 @@ body {
   font-size: 1.2rem;
 }
 
-.social-icons a {
+.contact-socials {
+  margin-top: 10px;
+}
+
+.contact-socials a {
+  font-size: 1.4rem;
   margin-right: 15px;
-  font-size: 1.3rem;
   color: #00ffd5;
   transition: transform 0.3s ease;
 }
 
-.social-icons a:hover {
+.contact-socials a:hover {
   transform: scale(1.2);
   color: white;
 }
 
-.contact-right {
+.contact-form {
   flex: 1;
   min-width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
-.contact-right input,
-.contact-right textarea {
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid #00ffd5;
   color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
 }
 
-.contact-right input::placeholder,
-.contact-right textarea::placeholder {
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
   color: #aaa;
 }
 
-.contact-right input:focus,
-.contact-right textarea:focus {
-  outline: none;
-  box-shadow: 0 0 10px #00ffd5;
-}
-
-.contact-right textarea {
-  resize: none;
-  height: 120px;
-}
-
-.contact-right button {
-  padding: 12px 20px;
-  background: #00ffd5;
+.contact-form button {
+  padding: 14px;
   border: none;
+  border-radius: 25px;
+  background: #00ffd5;
   color: black;
   font-weight: bold;
   font-size: 1rem;
-  border-radius: 25px;
-  transition: 0.3s;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.contact-right button:hover {
+.contact-form button:hover {
   background: #00bfa5;
   transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .contact-content {
+  .contact-layout {
     flex-direction: column;
-    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .contact-info {
+    text-align: center;
   }
 }
-
 
   </style>
 </head>
 <body>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <canvas id="particle-bg"></canvas>
 
@@ -1658,27 +1650,26 @@ body {
     <a class="btn" href="#contact">Let's Work Together</a>
   </section>
 
-<section class="contact-container" id="contact" data-aos="fade-up">
-  <div class="contact-content">
-    <div class="contact-left">
-      <h1>Let's Connect</h1>
-      <p>I’d love to hear from you. Whether you have a question or just want to say hi, feel free to drop a message!</p>
-      <div class="contact-info">
-        <div><i class="fas fa-envelope"></i><span>yourmail@example.com</span></div>
-        <div><i class="fas fa-phone-alt"></i><span>+91 9876543210</span></div>
-        <div><i class="fas fa-map-marker-alt"></i><span>Chennai, India</span></div>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
+<section class="contact-section" id="contact">
+  <h1 class="contact-heading">Contact Me</h1>
+  <p class="contact-subtext">Have a question or want to work together? Drop me a message below!</p>
+
+  <div class="contact-layout">
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i> yourmail@example.com</p>
+      <p><i class="fas fa-phone-alt"></i> +91 9876543210</p>
+      <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
+      <div class="contact-socials">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
 
-    <form class="contact-right" method="POST" action="submit.php">
+    <form class="contact-form" action="submit.php" method="POST">
       <input type="text" name="name" placeholder="Name" required />
       <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
     </form>
   </div>
