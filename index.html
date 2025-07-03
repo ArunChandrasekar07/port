@@ -8,9 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
 
-
-
-    body {
+ body {
       margin: 0;
       padding: 0;
       background: #0a0a0a;
@@ -1240,6 +1238,22 @@ header,
   }
 }
 
+/* Optional: stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-content {
+    order: 1;
+  }
+
+  .home-image {
+    order: 2;
+  }
+}
+
 /* ========== MOBILE-ONLY STYLES ========== */
 @media (max-width: 768px) {
   * {
@@ -1324,6 +1338,7 @@ body {
 
 }
 
+
   </style>
 </head>
 <body>
@@ -1364,7 +1379,7 @@ body {
   
     <!-- Left Side -->
     <div class="home-left">
-      <h1 class="shine-text fade-slide-up fade-delay-1">Hi, <span >I'm AruN</span></h1>
+      <h1 class="shine-text fade-slide-up fade-delay-1">Hi, <span >I'm Arun</span></h1>
       <h2 class="title fade-slide-up fade-delay-2">I'm a <span id="typed-role"></span></h2>
       <p class="subtitle fade-slide-up fade-delay-3">A passionate developer crafting modern web experiences.</p>
       <div class="button-row fade-slide-up fade-delay-4">
@@ -1619,9 +1634,10 @@ body {
 </script>
 
 <script>
+  // Particle Canvas Background
   const canvas = document.getElementById("particle-bg");
   const ctx = canvas.getContext("2d");
-  // simple test particle drawing
+
   function draw() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -1635,13 +1651,14 @@ body {
       ctx.fill();
     }
   }
+
   draw();
   window.addEventListener("resize", draw);
 </script>
 <script>
   // Only attach toggle on mobile (≤768px)
-  if (window.innerWidth <= 768) {
     function toggleMenu() {
+      if (window.innerWidth <= 768) {
       const nav = document.getElementById("navbar");
       nav.classList.toggle("active");
     }
