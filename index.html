@@ -7,6 +7,104 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
+
+
+/* ========== MOBILE-ONLY STYLES ========== */
+@media (max-width: 768px) {
+     /* Global Reset (safe) */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+  #mobile-wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 999;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  #navbar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 998;
+  }
+
+  #navbar.active {
+    display: flex;
+  }
+
+  #navbar a {
+    color: white;
+    padding: 15px 0;
+    font-size: 18px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  main {
+    padding-top: 80px;
+  }
+
+  footer {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+  }
+}
+
     body {
       margin: 0;
       padding: 0;
@@ -1045,6 +1143,96 @@ header,
       top: 0;
       z-index: 10;
     }
+    .social-icons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+}
+.footer {
+  width: 100%;
+  background-color: #0a0a0a;
+  color: #fff;
+   padding: 3px 0px;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center; /* centers icons horizontally */
+  gap: 10px;
+  margin-bottom: 10px; /* spacing between icons and text */
+}
+
+.footer .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 18px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.footer .social-icons a:hover {
+  background-color: #00ffd5;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.footer p {
+  margin: 0;
+  white-space: nowrap;
+}
+/* Special hover for Instagram */
+.footer .social-icons a[href*="instagram"]:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white;
+}
+.footer .social-icons a[href*="github"]:hover {
+  background-color: #333;
+  color: white;
+}
+.footer .social-icons a[href*="linkedin"]:hover {
+  background-color: #0077b5;
+  color: white;
+}
+/* Theme color for navbar + underline */
+:root {
+  --theme-color: #00ffd5;
+}
 
 /* Logo letter-by-letter animation */
 .name-header {
@@ -1145,178 +1333,6 @@ header,
   .home-image {
     order: 2;
   }
-}
-/* Mobile Responsive Fix */
-@media (max-width: 768px) {
-  * {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000; /* or your dark theme */
-    z-index: 999;
-  }
-
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-  }
-
-  .menu-toggle span {
-    display: block;
-    height: 3px;
-    width: 25px;
-    background-color: white;
-    border-radius: 2px;
-  }
-
-  #navbar {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #000;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    z-index: 998;
-  }
-
-  #navbar.active {
-    display: flex;
-  }
-
-  #navbar a {
-    color: white;
-    padding: 15px 0;
-    font-size: 18px;
-    text-decoration: none;
-    width: 100%;
-    text-align: center;
-  }
-
-  main {
-    padding-top: 80px;
-  }
-  html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #000;
-  color: #fff;
-}
-
-}
-
-    .social-icons {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.icon-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.06);
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.icon-button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: scale(1.1);
-}
-.footer {
-  width: 100%;
-  background-color: #0a0a0a;
-  color: #fff;
-   padding: 3px 0px;
-  font-size: 0.95rem;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-
-.footer .social-icons {
-  display: flex;
-  justify-content: center; /* centers icons horizontally */
-  gap: 10px;
-  margin-bottom: 10px; /* spacing between icons and text */
-}
-
-.footer .social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: white;
-  font-size: 18px;
-  transition: background 0.3s ease, transform 0.3s ease;
-  text-decoration: none;
-}
-
-.footer .social-icons a:hover {
-  background-color: #00ffd5;
-  color: #000;
-  transform: scale(1.1);
-}
-
-.footer p {
-  margin: 0;
-  white-space: nowrap;
-}
-/* Special hover for Instagram */
-.footer .social-icons a[href*="instagram"]:hover {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  color: white;
-}
-.footer .social-icons a[href*="github"]:hover {
-  background-color: #333;
-  color: white;
-}
-.footer .social-icons a[href*="linkedin"]:hover {
-  background-color: #0077b5;
-  color: white;
-}
-/* Theme color for navbar + underline */
-:root {
-  --theme-color: #00ffd5;
 }
 
 
@@ -1635,43 +1651,23 @@ body {
   window.addEventListener("resize", draw);
 </script>
 <script>
-  function toggleMenu() {
-    const nav = document.getElementById("navbar");
-    nav.classList.toggle("active");
-  }
+  // Only attach toggle on mobile (≤768px)
+  if (window.innerWidth <= 768) {
+    function toggleMenu() {
+      const nav = document.getElementById("navbar");
+      nav.classList.toggle("active");
+    }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll("#navbar a");
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        document.getElementById("navbar").classList.remove("active");
+    document.addEventListener("DOMContentLoaded", function () {
+      const links = document.querySelectorAll("#navbar a");
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          document.getElementById("navbar").classList.remove("active");
+        });
       });
     });
-  });
-</script>
-
-<!-- Your HTML content above -->
-
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("navbar");
-    nav.classList.toggle("active");
   }
-
-  // Close menu when a link is clicked
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("#navbar a").forEach(link => {
-      link.addEventListener("click", () => {
-        document.getElementById("navbar").classList.remove("active");
-      });
-    });
-  });
 </script>
-
-
-
-</body>
-</html>
 
 </body>
 </html>
