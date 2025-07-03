@@ -1238,22 +1238,56 @@ header,
 }
 /* Mobile Responsive Fix */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
+  * {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+header {
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    padding: 15px 20px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000; /* or your dark theme */
+    z-index: 999;
   }
 
   .menu-toggle {
-    display: block;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+    gap: 5px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    border-radius: 2px;
   }
 
   #navbar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
     display: none;
     flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 998;
   }
 
   #navbar.active {
@@ -1261,121 +1295,30 @@ header,
   }
 
   #navbar a {
-    margin: 10px 0;
-  }
-
-  .home-container {
-    flex-direction: column;
-    padding: 40px 20px;
-    align-items: center;
-    gap: 40px;
+    color: white;
+    padding: 15px 0;
+    font-size: 18px;
+    text-decoration: none;
+    width: 100%;
     text-align: center;
   }
 
-  .home-left, .photo-wrapper {
-    width: 100%;
-    align-items: center;
+  main {
+    padding-top: 80px;
   }
-
-  .home-left {
-    align-items: center;
-  }
-
-  .subtitle {
-    text-align: center !important;
-  }
-
-  .button-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .photo-wrapper {
-    width: 270px;
-    height: 270px;
-    margin: 0 auto;
-  }
-
-  .profile-photo.clean {
-    width: 100%;
-    height: 100%;
-  }
+  html {
+  scroll-behavior: smooth;
 }
-@media (max-width: 780px) {
-  /* Prevent horizontal scroll */
-  body {
-    overflow-x: hidden;
-  }
 
-  /* Limit all content inside screen */
-  * {
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-
-  /* Mobile header alignment fix */
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem 0;
-  }
-
-  /* Logo centered */
-  .logo {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  /* Hamburger Menu styles */
-  .menu-toggle {
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  /* Mobile Navigation Menu */
-  nav ul {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background: #000; /* or your dark theme */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-  }
-
-  nav ul.show {
-    transform: translateX(0%);
-  }
-
-  nav ul li {
-    margin: 1.5rem 0;
-    font-size: 1.5rem;
-  }
-
-  /* Fix main section content */
-  .main-section, .home-section {
-    padding: 0 1rem;
-    text-align: center;
-  }
-
-  /* Fix image or animation alignment */
-  .avatar, .animation-circle {
-    width: 100%;
-    max-width: 300px;
-    margin: auto;
-    display: block;
-  }
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #000;
+  color: #fff;
 }
+
+}
+
+
 
   </style>
 </head>
@@ -1710,13 +1653,21 @@ header,
 <!-- Your HTML content above -->
 
 <script>
-  const toggleBtn = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('nav ul');
+  function toggleMenu() {
+    const nav = document.getElementById("navbar");
+    nav.classList.toggle("active");
+  }
 
-  toggleBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("#navbar a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("active");
+      });
+    });
   });
 </script>
+
 
 </body>
 </html>
