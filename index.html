@@ -1301,73 +1301,6 @@ header,
     height: 100%;
   }
 }
-
-/* Prevent horizontal scroll */
-body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-/* Ensure header and hamburger are fixed on top for mobile */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-}
-
-/* Hamburger style (if not already present) */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.menu-toggle span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  transition: 0.3s;
-}
-
-/* Make sure body content starts below header */
-main {
-  padding-top: 80px;
-}
-
-/* Responsive hamburger visible */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  #navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #111;
-    width: 100%;
-    flex-direction: column;
-    display: none;
-  }
-
-  #navbar.active {
-    display: flex;
-  }
-
-  #navbar a {
-    padding: 15px;
-    border-bottom: 1px solid #333;
-  }
-}
-html {
-  scroll-behavior: smooth;
-}
 * {
   box-sizing: border-box;
 }
@@ -1434,7 +1367,11 @@ html, body {
     text-align: center;
   }
 
-  html {
+  main {
+    padding-top: 80px;
+  }
+}
+html {
   scroll-behavior: smooth;
 }
 
@@ -1448,7 +1385,6 @@ body {
   </style>
 </head>
 <body>
-  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <canvas id="particle-bg"></canvas>
@@ -1775,7 +1711,6 @@ body {
     });
   });
 </script>
-
 
 
 </body>
