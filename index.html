@@ -1363,6 +1363,94 @@ body {
 
 }
 
+.about-section {
+  padding: 100px 30px;
+  background: transparent;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #00ffd5;
+}
+
+.section-title span {
+  color: white;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1 1 300px;
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+  text-align: left;
+}
+
+.about-skills {
+  flex: 1 1 300px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill-box {
+  flex: 1 1 200px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 25px;
+  border: 1px solid #00ffd5;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.4s ease;
+  backdrop-filter: blur(4px);
+  animation: fadeInUp 1s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.4);
+}
+
+.skill-box i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #00ffd5;
+}
+
+.skill-box h3 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.skill-box p {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
 
   </style>
 </head>
@@ -1430,10 +1518,43 @@ body {
 
 
   <!-- About -->
-  <section class="section" id="about" data-aos="fade-up">
-    <h1>About Me</h1>
-    <p>I am passionate about building fast, lightweight, and beautiful websites using clean HTML and CSS. I also integrate backend with PHP/MySQL when needed.</p>
-  </section>
+<section class="section about-section" id="about">
+  <h1 class="section-title">About <span>Me</span></h1>
+  <div class="about-container">
+    <div class="about-text">
+      <p>
+        I'm a passionate Web Developer focused on creating fast, elegant, and accessible web experiences.
+        I specialize in clean HTML/CSS, responsive layouts, and dynamic integrations using modern tools.
+      </p>
+      <p>
+        I aim to build web products that are lightweight, intuitive, and visually polished—merging design with functionality to enhance user experience.
+      </p>
+    </div>
+    <div class="about-skills">
+      <div class="skill-box">
+        <i class="fas fa-code"></i>
+        <h3>Frontend Dev</h3>
+        <p>HTML, CSS, JavaScript, Responsive Design, and more</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-server"></i>
+        <h3>Backend Dev</h3>
+        <p>PHP, MySQL, APIs, Form Handling, and Authentication</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Responsive UI</h3>
+        <p>Pixel-perfect design for all screen sizes and devices</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-rocket"></i>
+        <h3>Performance</h3>
+        <p>Fast-loading pages with optimized assets and clean code</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Skills -->
   <section class="section" id="skills" data-aos="fade-up">
