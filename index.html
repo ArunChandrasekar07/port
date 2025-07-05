@@ -1451,6 +1451,119 @@ body {
     text-align: center;
   }
 }
+.section-title-left {
+  text-align: left;
+  font-size: 2.8rem;
+  color: #00ffd5;
+  margin-bottom: 40px;
+}
+
+.section-title-left span {
+  color: #fff;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.about-text {
+  flex: 1 1 45%;
+  font-size: 1.05rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.about-skills {
+  flex: 1 1 50%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.skill-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #00ffd5;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(0, 255, 213, 0.05);
+  animation: floatUp 3s ease-in-out infinite;
+}
+
+.skill-box:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.3);
+}
+
+.skill-box i {
+  font-size: 2rem;
+  color: #00ffd5;
+  margin-bottom: 10px;
+}
+
+.skill-box h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.skill-box p {
+  color: #bbb;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Bouncing Float Animation */
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .section-title-left {
+    font-size: 2.2rem;
+  }
+
+  .about-text {
+    text-align: left;
+  }
+}
+.skill-box {
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.skill-box:hover,
+.skill-box:active {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 255, 213, 0.2);
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+  100% { transform: scale(1); }
+}
+
+.skill-box:hover {
+  animation: pulse 0.8s ease;
+}
+
+#about {
+  padding-top: 10px;
+  scroll-margin-top: 0px;
+}
 
   </style>
 </head>
@@ -1512,6 +1625,15 @@ body {
 </section>
 
 
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<!-- AOS Animation -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 
 
@@ -1519,41 +1641,50 @@ body {
 
   <!-- About -->
 <section class="section about-section" id="about">
-  <h1 class="section-title">About <span>Me</span></h1>
+  <h1 class="section-title-left" data-aos="fade-right">About <span>Me</span></h1>
   <div class="about-container">
-    <div class="about-text">
-      <p>
-        I'm a passionate Web Developer focused on creating fast, elegant, and accessible web experiences.
-        I specialize in clean HTML/CSS, responsive layouts, and dynamic integrations using modern tools.
-      </p>
-      <p>
-        I aim to build web products that are lightweight, intuitive, and visually polished—merging design with functionality to enhance user experience.
-      </p>
-    </div>
+  <div class="about-text" data-aos="fade-up" data-aos-delay="100"style="padding-top: 50px; flex: 1 1 45%; display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;">
+  <p>
+    I’m a passionate Full Stack Developer with a focus on building sleek, high-performing web applications that deliver real value.
+  </p>
+  <p>
+    From crafting clean, responsive frontends to architecting robust backends, I thrive on creating seamless digital experiences that feel effortless to users.
+  </p>
+  <p>
+    I’m driven by curiosity and a constant hunger to learn, always exploring the latest technologies to stay ahead and build solutions that stand out.
+  </p>
+</div>
+
+
+
+
     <div class="about-skills">
-      <div class="skill-box">
+      <div class="skill-box bounce" data-aos="zoom-in-up" data-aos-delay="200">
         <i class="fas fa-code"></i>
         <h3>Frontend Dev</h3>
         <p>HTML, CSS, JavaScript, Responsive Design, and more</p>
       </div>
-      <div class="skill-box">
+      <div class="skill-box bounce" data-aos="zoom-in-up" data-aos-delay="300">
         <i class="fas fa-server"></i>
         <h3>Backend Dev</h3>
         <p>PHP, MySQL, APIs, Form Handling, and Authentication</p>
       </div>
-      <div class="skill-box">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Responsive UI</h3>
-        <p>Pixel-perfect design for all screen sizes and devices</p>
-      </div>
-      <div class="skill-box">
-        <i class="fas fa-rocket"></i>
-        <h3>Performance</h3>
-        <p>Fast-loading pages with optimized assets and clean code</p>
-      </div>
+     <div class="skill-box bounce" data-aos="zoom-in-up" data-aos-delay="400">
+  <i class="fas fa-tools"></i>
+  <h3>Tools & Workflow</h3>
+  <p>VS Code, GitHub, Figma, Chrome DevTools, Deployment Tools, and Task Automation</p>
+</div>
+
+<div class="skill-box bounce" data-aos="zoom-in-up" data-aos-delay="500">
+  <i class="fas fa-comments"></i>
+  <h3>Communication</h3>
+  <p>Strong team collaboration, clear documentation, and effective client interaction</p>
+</div>
+
     </div>
   </div>
 </section>
+
 
 
   <!-- Skills -->
