@@ -1629,6 +1629,29 @@ body {
 .skill-box-pro:nth-child(7) { animation-delay: 1.2s; }
 .skill-box-pro:nth-child(8) { animation-delay: 1.4s; }
 
+/* PROFESSIONAL ICON HOVER FOR SKILL BOXES */
+.skill-box-pro i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-box-pro:hover i {
+  transform: translateY(-6px) scale(1.15);
+  color: #00ffd5; /* or your theme accent color */
+}
+#skills {
+  scroll-margin-top: 0px;
+}
+#skills {
+  scroll-margin-top: 0px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+#skills .section-title-left {
+  margin-bottom: 0px !important;
+}
+
+
   </style>
 </head>
 <body>
@@ -1747,8 +1770,10 @@ body {
 </section>
 
 
-<section class="section" id="skills" data-aos="fade-up">
+<section class="section" id="skills" data-aos="fade-up" style="scroll-margin-top: 0px;">
   <h1 class="section-title-left" data-aos="fade-right" data-aos-delay="100">My <span>Skills</span></h1>
+
+
 
   <div class="skills-flex-grid">
 
