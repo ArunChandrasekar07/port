@@ -1596,7 +1596,7 @@ body {
 
 .skill-box-pro h3 {
   font-size: 1.2rem;
-  color: #00f7ff;
+  color: #00ffd5;
   margin-bottom: 10px;
 }
 
@@ -1651,6 +1651,9 @@ body {
   margin-bottom: 0px !important;
 }
 
+#skills {
+  scroll-margin-top: 80px; /* Same as navbarHeight in JS */
+}
 
   </style>
 </head>
@@ -2083,5 +2086,32 @@ body {
     });
   });
 </script>
+<script>
+  document.querySelectorAll('#navbar a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const hash = this.getAttribute('href');
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      const navbarHeight = 80; // Adjust if your fixed header height is different
+      const targetScroll = Math.round(target.getBoundingClientRect().top + window.pageYOffset - navbarHeight);
+      const currentScroll = Math.round(window.pageYOffset);
+
+      // If already very close (±2px), block scroll
+      if (Math.abs(currentScroll - targetScroll) <= 2) {
+        e.preventDefault();
+        return;
+      }
+
+      // Scroll if different section or far away
+      e.preventDefault();
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
