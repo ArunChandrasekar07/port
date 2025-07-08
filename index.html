@@ -1905,9 +1905,50 @@ body {
 [data-aos="fade-right"].aos-animate .latest-underline::after {
   width: 100%;
 }
+.project-box {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
 
+/* Zoom the whole box on hover */
+.project-box:hover {
+  transform: scale(1.05);
+}
 
+/* Zoom the image */
+.project-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
 
+.project-box:hover img {
+  transform: scale(1.1); /* Zoom image on hover */
+}
+
+/* Info overlay */
+.project-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: white;
+  padding: 20px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30%) scale(1);
+}
+
+/* Zoom the description when hovered */
+.project-box:hover .project-info {
+  opacity: 1;
+  transform: translateY(0) scale(1.03);
+}
 
   </style>
 </head>
