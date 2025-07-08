@@ -1755,19 +1755,28 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .timeline {
+    margin-left: 20px;
+    padding-left: 0;
+  }
+
   .timeline-item {
-    padding-left: 50px;
+    padding-left: 40px;
   }
 
   .timeline-item::before,
   .timeline-item:not(:last-child)::after {
-    left: 6px; /* adjust only for mobile */
+    left: 10px;
   }
 
   .circle {
-    left: -2px; /* perfectly centers the dot over the line on mobile */
+    left: 1px;
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
   }
 }
+
 
 .content {
   background: rgba(255, 255, 255, 0.03);
