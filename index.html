@@ -1754,6 +1754,20 @@ body {
     transform: translateY(0);
   }
 }
+@media (max-width: 768px) {
+  .timeline-item {
+    padding-left: 50px;
+  }
+
+  .timeline-item::before,
+  .timeline-item:not(:last-child)::after {
+    left: 6px; /* adjust only for mobile */
+  }
+
+  .circle {
+    left: -2px; /* perfectly centers the dot over the line on mobile */
+  }
+}
 
 .content {
   background: rgba(255, 255, 255, 0.03);
