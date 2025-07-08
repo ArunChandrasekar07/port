@@ -1268,20 +1268,18 @@ html, body {
 }
 @media (max-width: 768px) {
   header {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;           /* ✅ No vertical padding */
-  height: 60px;
-  line-height: 60px;         /* ✅ Vertically center text/icons */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #000;
-  z-index: 999;
-}
-
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000; /* or your dark theme */
+    z-index: 999;
+  }
 
   .menu-toggle {
     display: flex;
