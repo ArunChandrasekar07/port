@@ -1687,25 +1687,62 @@ body {
 .section-title-left span {
   color: #00e0ff;
 }
-
 .timeline {
   position: relative;
-  border-left: 3px solid #00e0ff;
   margin-left: 40px;
-  padding-left: 40px;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  padding-left: 60px;
   animation: fadeInUp 1s ease forwards;
   opacity: 0;
 }
 
-.timeline-item:nth-child(1) { animation-delay: 0.3s; }
-.timeline-item:nth-child(2) { animation-delay: 0.5s; }
-.timeline-item:nth-child(3) { animation-delay: 0.7s; }
-.timeline-item:nth-child(4) { animation-delay: 0.9s; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 20px; /* starts below the circle */
+  width: 3px;
+  height: calc(100% - 20px); /* makes line start from the circle */
+  background-color: #00e0ff;
+}
+
+.timeline-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 10px; /* Instead of 20px */
+  left: 9px;
+  width: 3px;
+  height: calc(100% + 70px); /* Smooth stretch */
+  background-color: #00e0ff;
+  z-index: 1;
+}
+
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #00e0ff;
+  border: 3px solid black; /* or white, if you want better contrast */
+  border-radius: 50%;
+  z-index: 2; /* Keep it above the line */
+}
+.circle:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 15px rgba(0, 224, 255, 1),
+    0 0 30px rgba(0, 224, 255, 0.6),
+    inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+
+
 
 @keyframes fadeInUp {
   from {
@@ -1716,17 +1753,6 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.circle {
-  position: absolute;
-  left: -50px;
-  top: 10px;
-  width: 20px;
-  height: 20px;
-  background-color: #00e0ff;
-  border-radius: 50%;
-  border: 3px solid white;
 }
 
 .content {
