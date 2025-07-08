@@ -1791,6 +1791,120 @@ body {
   color: #00e0ff; /* Your theme blue */
 }
 
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-box {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.project-box:hover {
+  transform: translateY(-10px);
+}
+
+.project-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: white;
+  padding: 20px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30%);
+}
+
+.project-box:hover .project-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-info h3 {
+  font-size: 18px;
+  margin: 0 0 5px;
+  font-weight: 600;
+}
+
+.project-info p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+/* Force Latest to stay white */
+.latest-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  color: white !important; /* <-- Force it to be white, highest priority */
+}
+
+/* Underline Animation */
+.latest-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: #00EFFF; /* Your theme underline color */
+  transition: width 0.6s ease-in-out;
+}
+
+/* Trigger underline animation with AOS */
+[data-aos="fade-right"].aos-animate .latest-underline::after {
+  width: 100%;
+}
+
+/* Theme-colored text */
+.theme-text {
+  color: #00EFFF;
+}
+/* Text Colors */
+.white-text {
+  color: white;
+}
+
+.theme-text {
+  color: #00EFFF; /* your theme blue */
+}
+
+/* Section underline */
+.latest-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.latest-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: #00EFFF; /* your theme underline color */
+  transition: width 0.6s ease-in-out;
+}
+
+/* Animate underline on AOS scroll in */
+[data-aos="fade-right"].aos-animate .latest-underline::after {
+  width: 100%;
+}
 
 
   </style>
@@ -1869,7 +1983,11 @@ body {
 
   <!-- About -->
 <section class="section about-section" id="about">
-  <h1 class="section-title-left" data-aos="fade-right">About <span>Me</span></h1>
+  <h1 class="section-title-left" data-aos="fade-right">
+  <span class="latest-underline">About</span>
+  <span class="theme-text">Me</span>
+</h1>
+
   <div class="about-container">
   <div class="about-text" data-aos="fade-up" data-aos-delay="100"style="padding-top: 50px; flex: 1 1 45%; display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;">
   <p>
@@ -1916,7 +2034,9 @@ body {
 
 
 <section class="section" id="skills" data-aos="fade-up" style="scroll-margin-top: 0px;">
-  <h1 class="section-title-left" data-aos="fade-right" data-aos-delay="100">My <span>Skills</span></h1>
+<h1 class="section-title-left" data-aos="fade-right" data-aos-delay="100">
+  <span class="latest-underline">My</span> <span class="theme-text">Skills</span>
+</h1>
 
 
 
@@ -1979,8 +2099,9 @@ body {
   
    <section class="education-section" id="education" data-aos="fade-up">
 <h2 class="section-title-left" data-aos="fade-right" data-aos-delay="100">
-  <span style="color: white;">Education</span> <span style="color: #00e0ff;">Journey</span>
+  <span class="latest-underline">Education</span> <span class="theme-text">Journey</span>
 </h2>
+
 
 
 
@@ -2020,7 +2141,12 @@ body {
 
   <!-- Certifications Section -->
     <section class="section" id="certifications" style="padding-top: 20px;">
-      <h1 data-aos="fade-up">My Certifications</h1>
+   <h1 class="section-title-left" data-aos="fade-right" data-aos-delay="100">
+  <span class="latest-underline white-text">My</span>
+  <span class="theme-text">Certifications</span>
+</h1>
+
+
       <div class="cert-grid">
         <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
           <a href="https://www.hackerrank.com/certificates/eb968bd2f886" target="_blank">
@@ -2081,10 +2207,43 @@ body {
 
   <!-- Projects -->
   <section class="section" id="projects" data-aos="fade-up">
-    <h1>Projects</h1>
-    <p>Here are some of my favorite works.</p>
-    <a class="btn" href="#contact">Let's Work Together</a>
-  </section>
+<h1 class="section-title-left" data-aos="fade-right" data-aos-delay="100">
+  <span class="latest-underline">Latest</span>
+  <span class="theme-text">Projects</span>
+</h1>
+
+  <div class="project-grid">
+    
+    <!-- Project 1 -->
+    <a href="https://yourproject1.netlify.app" class="project-box" target="_blank">
+      <img src="rail.jpg" alt="VIT MISQUBE">
+      <div class="project-info">
+        <h3>VIT MISQUBE</h3>
+        <p>Your comprehensive resource for VIT question papers</p>
+      </div>
+    </a>
+
+    <!-- Project 2 -->
+    <a href="https://yourproject2.netlify.app" class="project-box" target="_blank">
+      <img src="images/project2.png" alt="QuizSphere">
+      <div class="project-info">
+        <h3>QuizSphere</h3>
+        <p>Dynamic NPTEL quiz platform with interactive features</p>
+      </div>
+    </a>
+
+    <!-- Project 3 -->
+    <a href="https://toc-regex.netlify.app" class="project-box" target="_blank">
+      <img src="images/project3.png" alt="Regex Converter">
+      <div class="project-info">
+        <h3>Regex to NFA/DFA Converter</h3>
+        <p>Convert regex to automata with visual representation</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
 
   <!-- Contact -->
   <section class="section" id="contact" data-aos="fade-up">
