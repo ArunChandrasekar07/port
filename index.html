@@ -1267,19 +1267,23 @@ html, body {
   max-width: 100vw;
 }
 @media (max-width: 768px) {
+  @media (max-width: 768px) {
   header {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 0 20px;
     height: 60px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #000; /* or your dark theme */
+    background-color: #000;
     z-index: 999;
   }
+}
+
 
   .menu-toggle {
     display: flex;
@@ -1375,7 +1379,7 @@ body {
 .section-title {
   font-size: 3rem;
   margin-bottom: 40px;
-  color: #00ffd5;
+  color: #00f7ff99;
 }
 
 .section-title span {
@@ -1454,7 +1458,7 @@ body {
 .section-title-left {
   text-align: left;
   font-size: 2.8rem;
-  color: #00ffd5;
+  color: #00f7ff99;
   margin-bottom: 40px;
 }
 
@@ -1486,7 +1490,7 @@ body {
 
 .skill-box {
   background: rgba(255, 255, 255, 0.02);
-  border:1px solid #00f7ff;
+  border:1px solid #00f7ff99;
   border-radius: 12px;
   padding: 20px;
   text-align: center;
@@ -1573,7 +1577,7 @@ body {
 
 .skill-box-pro {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid #00f7ff;
+  border: 1px solid #00f7ff99;
   border-radius: 15px;
   padding: 30px;
   text-align: center;
