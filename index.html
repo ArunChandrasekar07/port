@@ -1695,54 +1695,41 @@ body {
 .timeline-item {
   position: relative;
   margin-bottom: 80px;
-  padding-left: 60px;
-  animation: fadeInUp 1s ease forwards;
+  padding-left: 40px;
   opacity: 0;
+  animation: fadeInUp 1s ease forwards;
 }
 
-.timeline-item::before {
+.timeline::before {
   content: "";
   position: absolute;
-  left: 9px;
-  top: 20px; /* starts below the circle */
+  left: 10px;
+  top: 0;
   width: 3px;
-  height: calc(100% - 20px); /* makes line start from the circle */
+  height: 100%;
   background-color: #00e0ff;
+  z-index: 0;
 }
-
-.timeline-item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 10px; /* Instead of 20px */
-  left: 9px;
-  width: 3px;
-  height: calc(100% + 70px); /* Smooth stretch */
-  background-color: #00e0ff;
-  z-index: 1;
-}
-
 
 .circle {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
   background-color: #00e0ff;
-  border: 3px solid black; /* or white, if you want better contrast */
+  border: 3px solid black;
   border-radius: 50%;
-  z-index: 2; /* Keep it above the line */
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
+
 .circle:hover {
   transform: scale(1.1);
-  box-shadow:
-    0 0 15px rgba(0, 224, 255, 1),
-    0 0 30px rgba(0, 224, 255, 0.6),
-    inset 0 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 224, 255, 1),
+              0 0 30px rgba(0, 224, 255, 0.6),
+              inset 0 0 6px rgba(255, 255, 255, 0.3);
 }
-
-
-
 
 @keyframes fadeInUp {
   from {
@@ -1754,28 +1741,27 @@ body {
     transform: translateY(0);
   }
 }
+
 @media (max-width: 768px) {
   .timeline {
     margin-left: 20px;
-    padding-left: 0;
   }
 
   .timeline-item {
-    padding-left: 40px;
+    padding-left: 30px;
   }
 
-  .timeline-item::before,
-  .timeline-item:not(:last-child)::after {
-    left: 10px;
+  .timeline::before {
+    left: 9px;
   }
 
   .circle {
     left: 1px;
-    width: 16px;
-    height: 16px;
-    border-width: 2px;
+    width: 14px;
+    height: 14px;
   }
 }
+
 
 
 .content {
