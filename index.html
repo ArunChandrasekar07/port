@@ -1741,9 +1741,6 @@ body {
     inset 0 0 6px rgba(255, 255, 255, 0.3);
 }
 
-
-
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -1752,28 +1749,6 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@media (max-width: 768px) {
-  .timeline {
-    margin-left: 20px;
-    padding-left: 0;
-  }
-
-  .timeline-item {
-    padding-left: 40px;
-  }
-
-  .timeline-item::before,
-  .timeline-item:not(:last-child)::after {
-    left: 10px;
-  }
-
-  .circle {
-    left: 1px;
-    width: 16px;
-    height: 16px;
-    border-width: 2px;
   }
 }
 
@@ -1817,6 +1792,8 @@ body {
 }
 
 /* Responsive */
+
+/* Responsive */
 @media (max-width: 768px) {
   /* Hide timeline lines and circles */
   .timeline-item::before,
@@ -1842,8 +1819,6 @@ body {
     font-size: 2rem; /* Adjust size if it's too large on small screens */
   }
 }
-
-
 
 /* Text Colors */
 .white-text {
