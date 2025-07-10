@@ -1695,41 +1695,54 @@ body {
 .timeline-item {
   position: relative;
   margin-bottom: 80px;
-  padding-left: 40px;
-  opacity: 0;
+  padding-left: 60px;
   animation: fadeInUp 1s ease forwards;
+  opacity: 0;
 }
 
-.timeline::before {
+.timeline-item::before {
   content: "";
   position: absolute;
-  left: 10px;
-  top: 0;
+  left: 9px;
+  top: 20px; /* starts below the circle */
   width: 3px;
-  height: 100%;
+  height: calc(100% - 20px); /* makes line start from the circle */
   background-color: #00e0ff;
-  z-index: 0;
 }
+
+.timeline-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 10px; /* Instead of 20px */
+  left: 9px;
+  width: 3px;
+  height: calc(100% + 70px); /* Smooth stretch */
+  background-color: #00e0ff;
+  z-index: 1;
+}
+
 
 .circle {
   position: absolute;
   top: 0;
-  left: 1px;
-  width: 18px;
-  height: 18px;
+  left: 0;
+  width: 20px;
+  height: 20px;
   background-color: #00e0ff;
-  border: 3px solid black;
+  border: 3px solid black; /* or white, if you want better contrast */
   border-radius: 50%;
-  z-index: 1;
-  transition: transform 0.3s ease;
+  z-index: 2; /* Keep it above the line */
 }
-
 .circle:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(0, 224, 255, 1),
-              0 0 30px rgba(0, 224, 255, 0.6),
-              inset 0 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 0 15px rgba(0, 224, 255, 1),
+    0 0 30px rgba(0, 224, 255, 0.6),
+    inset 0 0 6px rgba(255, 255, 255, 0.3);
 }
+
+
+
 
 @keyframes fadeInUp {
   from {
@@ -1741,27 +1754,28 @@ body {
     transform: translateY(0);
   }
 }
-
 @media (max-width: 768px) {
   .timeline {
     margin-left: 20px;
+    padding-left: 0;
   }
 
   .timeline-item {
-    padding-left: 30px;
+    padding-left: 40px;
   }
 
-  .timeline::before {
-    left: 9px;
+  .timeline-item::before,
+  .timeline-item:not(:last-child)::after {
+    left: 10px;
   }
 
   .circle {
     left: 1px;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
   }
 }
-
 
 
 .content {
@@ -1804,19 +1818,26 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .section-title-left {
-    font-size: 2.2rem;
+  /* Hide timeline lines and circles */
+  .timeline-item::before,
+  .timeline-item::after,
+  .circle {
+    display: none;
+  }
+
+  /* Optional: Remove padding-left caused by timeline spacing */
+  .timeline-item {
+    padding-left: 0;
+    margin-left: 0;
   }
 
   .timeline {
-    margin-left: 20px;
-    padding-left: 20px;
-  }
-
-  .circle {
-    left: -30px;
+    margin-left: 0;
+    padding-left: 0;
+    border: none;
   }
 }
+
 /* Text Colors */
 .white-text {
   color: white;
