@@ -1818,25 +1818,34 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  /* Hide timeline lines and circles */
+  /* Hide timeline visuals */
   .timeline-item::before,
   .timeline-item::after,
   .circle {
     display: none;
   }
 
-  /* Optional: Remove padding-left caused by timeline spacing */
+  /* Adjust only the timeline content, not the title spacing */
   .timeline-item {
     padding-left: 0;
     margin-left: 0;
   }
 
   .timeline {
-    margin-left: 0;
+    margin-left: 20px; /* Keep some space for visual balance */
     padding-left: 0;
     border: none;
   }
+
+  /* Fix for section title staying aligned */
+  .section-title-left {
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left; /* Optional, ensures alignment */
+  }
 }
+
+
 
 /* Text Colors */
 .white-text {
