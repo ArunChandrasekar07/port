@@ -2200,17 +2200,43 @@ body {
     max-width: 100%;
     border-radius: 12px;
     overflow: hidden;
+    transition: transform 0.3s ease;
   }
 
   .project-box img {
     width: 100%;
-    height: auto; /* let it resize proportionally */
-    display: block;
+    height: 200px;
     object-fit: cover;
-    border-radius: 0; /* remove any individual corners */
+    display: block;
+    transition: transform 0.4s ease;
+    border-radius: 0; /* prevent image corners clashing with box radius */
+  }
+
+  .project-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    color: white;
+    padding: 20px;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30%) scale(1);
+  }
+
+  .project-box:hover {
+    transform: scale(1.03);
+  }
+
+  .project-box:hover img {
+    transform: scale(1.08);
+  }
+
+  .project-box:hover .project-info {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
   }
 }
-
 
   </style>
 </head>
