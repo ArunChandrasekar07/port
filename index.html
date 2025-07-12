@@ -2110,7 +2110,7 @@ body {
 .social-icons a.instagram:hover { color: #e1306c; }
 
 /* Scroll to Top Button */
-#scroll-top {
+#scroll-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -2121,17 +2121,27 @@ body {
   height: 45px;
   border-radius: 50%;
   font-size: 1.2rem;
+  opacity: 0; /* ✨ Start hidden with opacity */
+  visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: 0.3s;
+  z-index: 1000;
+  transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
-#scroll-top:hover {
+#scroll-btn.show {
+  opacity: 1;          /* ✨ Fade in */
+  visibility: visible; /* Show */
+}
+
+#scroll-btn:hover {
   background: #00e0ff;
   color: #000;
+  transform: scale(1.1);
 }
+
 
 /* Copyright */
 .contact-footer {
@@ -2534,11 +2544,12 @@ body {
   <!-- Copyright -->
   <p class="contact-footer">© 2025 Arun C. All rights reserved.</p>
 
-  <!-- Scroll to Top -->
-  <div id="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-    <i class="fas fa-arrow-up"></i>
-  </div>
 </section>
+<!-- Scroll to Top Button -->
+<div id="scroll-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
@@ -2735,7 +2746,20 @@ body {
   AOS.init({ once: true });
 </script>
 <script>
-  
-  </script>
+  window.addEventListener('scroll', function () {
+    const scrollBtn = document.getElementById('scroll-btn');
+    const contactSection = document.getElementById('contact');
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const contactOffset = contactSection.offsetTop + 200;
+
+    if (scrollPosition >= contactOffset) {
+      scrollBtn.classList.add('show');   // Smoothly fade in
+    } else {
+      scrollBtn.classList.remove('show'); // Smoothly fade out
+    }
+  });
+</script>
+
+
 </body>
 </html>
