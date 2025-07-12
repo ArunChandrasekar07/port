@@ -2202,17 +2202,12 @@ body {
     overflow: hidden;
   }
 
-  .project-grid {
-    justify-content: center; /* Optional: centers cards on mobile */
-  }
-
   .project-box img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    height: auto; /* let it resize proportionally */
     display: block;
+    object-fit: cover;
+    border-radius: 0; /* remove any individual corners */
   }
 }
 
