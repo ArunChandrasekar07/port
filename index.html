@@ -832,7 +832,7 @@ flex-direction: column;
 .shine-text {
   background: linear-gradient(90deg, #00ffd5, #00bfa5, #00ffd5);
   background-size: 200%;
-  -webkit-background-clip: text;
+   background-clip: text;
   color: transparent;
   animation: shineIn 2s ease forwards;
   opacity: 0;
@@ -2670,27 +2670,31 @@ body {
 </script>
 
 <script>
-  // Particle Canvas Background
-  const canvas = document.getElementById("particle-bg");
-  const ctx = canvas.getContext("2d");
+  document.addEventListener("DOMContentLoaded", function () {
+    const canvas = document.getElementById("particle-bg");
+    if (!canvas) return;
 
-  function draw() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "cyan";
-    for (let i = 0; i < 100; i++) {
-      ctx.beginPath();
-      const x = Math.random() * canvas.width;
-      const y = Math.random() * canvas.height;
-      ctx.arc(x, y, 2, 0, Math.PI * 2);
-      ctx.fill();
+    const ctx = canvas.getContext("2d");
+
+    function draw() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "cyan";
+      for (let i = 0; i < 100; i++) {
+        ctx.beginPath();
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        ctx.arc(x, y, 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
     }
-  }
 
-  draw();
-  window.addEventListener("resize", draw);
+    draw();
+    window.addEventListener("resize", draw);
+  });
 </script>
+
 <script>
   // Toggle menu only on mobile
   function toggleMenu() {
