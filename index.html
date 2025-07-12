@@ -798,14 +798,14 @@ flex-direction: column;
   transition: box-shadow 0.3s ease;
 }
 .photo-wrapper:hover {
-  box-shadow: 0 0 40px rgba(0, 255, 213, 0.6);
+  box-shadow: 0 0 40px #00e0ff;
 }
 .profile-photo.clean {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #00ffd5;
+  border: 4px solid #00e0ff;
 }
 .photo-wrapper {
   position: relative;
@@ -819,7 +819,7 @@ flex-direction: column;
 
 .photo-wrapper:hover {
   transform: scale(1.05); /* Slight zoom */
-  box-shadow: 0 0 40px rgba(0, 255, 213, 0.6); /* Brighter glow on hover */
+  box-shadow: 0 0 40px #00e0ff; /* Brighter glow on hover */
 }
 
 .profile-photo.clean {
@@ -827,7 +827,7 @@ flex-direction: column;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #00ffd5;
+  border: 4px solid #00e0ff;
 }
 .shine-text {
   background: linear-gradient(90deg, #00ffd5, #00bfa5, #00ffd5);
@@ -960,8 +960,8 @@ flex-direction: column;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid cyan;
-  box-shadow: 0 0 20px cyan;
+  border: 4px solid #00e0ff;
+  box-shadow: 0 0 20px #00e0ff;
 }
 header,
 .section {
@@ -1134,7 +1134,7 @@ header,
 }
 /* Theme color for navbar + underline */
 :root {
-  --theme-color: #00ffd5;
+  --theme-color: #00e0ff;
 }
 
 /* Logo letter-by-letter animation */
@@ -2509,7 +2509,7 @@ body {
   <!-- CONTACT SECTION -->
 <section class="contact-section" id="contact">
     <h1 class="section-title-left" data-aos="fade-right" data-aos-delay="100">
-  <span class="latest-underline white-text">Contact</span>
+  <span class="latest-underline white-text">Conatct</span>
   <span class="theme-text">Me</span>
 </h1>
 
@@ -2542,9 +2542,7 @@ body {
   </div>
 
   <!-- Copyright -->
-<p style="padding-top: 60px; font-size: 0.9rem; color: #ccc; text-align: center;">
-  © 2025 Arun C. All rights reserved.
-</p>
+  <p class="contact-footer">© 2025 Arun C. All rights reserved.</p>
 
 </section>
 <!-- Scroll to Top Button -->
