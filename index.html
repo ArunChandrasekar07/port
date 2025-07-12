@@ -2231,6 +2231,7 @@ body {
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    margin-bottom: 0; /* 🧹 Remove extra space below card */
   }
 
   .project-box img {
@@ -2239,7 +2240,7 @@ body {
     object-fit: cover;
     display: block;
     transition: transform 0.4s ease;
-    border-radius: 0; /* prevent image corners clashing with box radius */
+    border-radius: 0;
   }
 
   .project-info {
@@ -2266,7 +2267,23 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1.02);
   }
+
+  .project-grid {
+    margin-bottom: 0;     /* ✅ No extra space below the grid */
+    padding-bottom: 0;
+  }
+
+  #projects {
+    margin-bottom: 0;     /* ✅ Prevent spacing between projects & contact */
+    padding-bottom: 0;
+  }
+
+  #contact,
+  .contact-section {
+    padding-top: 20px;    /* ✅ Bring contact closer */
+  }
 }
+
 .project-box:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0, 224, 255, 0.4); /* Glow on all sides using #00e0ff */
