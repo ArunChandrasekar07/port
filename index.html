@@ -117,10 +117,11 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     }
-    .cert-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(0, 255, 249, 0.3);
-    }
+   .cert-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.4); /* Glow on all sides using #00e0ff */
+}
+
     .cert-card img {
       max-width: 100%;
       height: auto;
@@ -2171,30 +2172,59 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 40px;
+  justify-content: start; /* Align project cards to left */
 }
 
-/* Card Styling */
+/* Project Card Styling */
 .project-box {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease;
   cursor: pointer;
-  width: 100%;          /* 👈 Let it fill available column */
-  max-width: 450px;     /* 👈 Limit max width on desktop */
+  width: 100%;          /* Fill available grid space */
+  max-width: 450px;     /* Prevent over-stretching */
+  margin: 0 auto;
 }
 
-/* Optional: Align left even with one card */
-.project-grid {
-  justify-content: start;  /* 👈 Aligns boxes to the left */
-}
-
-/* Image Styling */
+/* Image inside the card */
 .project-box img {
-  width: 100%;        /* Ensures image fills box */
+  width: 100%;
   height: 240px;
   object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  border-radius: 0; /* Optional: can be removed if you want round corners */
 }
+
+/* Zoom image and box on hover */
+.project-box:hover {
+  transform: scale(1.05);
+}
+
+.project-box:hover img {
+  transform: scale(1.1);
+}
+
+/* Info overlay inside project card */
+.project-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: white;
+  padding: 20px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30%) scale(1);
+}
+
+/* Reveal info on hover */
+.project-box:hover .project-info {
+  opacity: 1;
+  transform: translateY(0) scale(1.03);
+}
+
 @media (max-width: 768px) {
   .project-box {
     max-width: 100%;
@@ -2237,6 +2267,11 @@ body {
     transform: translateY(0) scale(1.02);
   }
 }
+.project-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.4); /* Glow on all sides using #00e0ff */
+}
+
 
   </style>
 </head>
@@ -2552,18 +2587,13 @@ body {
         <p>A comprehensive railway ticket booking system that eliminates deadlocks.</p>
       </div>
     </a>
-
-    
-
   </div>
 </section>
 
-
-
-  <!-- Contact -->
+  <!-- CONTACT SECTION -->
 <section class="contact-section" id="contact">
     <h1 class="section-title-left" data-aos="fade-right" data-aos-delay="100">
-  <span class="latest-underline white-text">Conatct</span>
+  <span class="latest-underline white-text">Contact</span>
   <span class="theme-text">Me</span>
 </h1>
 
@@ -2817,5 +2847,7 @@ body {
     }
   });
 </script>
+
+
 </body>
 </html>
