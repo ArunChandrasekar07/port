@@ -2226,61 +2226,33 @@ body {
 }
 
 @media (max-width: 768px) {
-  .project-box {
-    max-width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    margin-bottom: 0; /* 🧹 Remove extra space below card */
-  }
-
-  .project-box img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-    border-radius: 0;
-  }
-
-  .project-info {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
-    color: white;
-    padding: 20px;
-    transition: all 0.4s ease;
-    opacity: 0;
-    transform: translateY(30%) scale(1);
-  }
-
-  .project-box:hover {
-    transform: scale(1.03);
-  }
-
-  .project-box:hover img {
-    transform: scale(1.08);
-  }
-
-  .project-box:hover .project-info {
-    opacity: 1;
-    transform: translateY(0) scale(1.02);
-  }
-
+  /* Remove bottom space from project section */
+  #projects,
   .project-grid {
-    margin-bottom: 0;     /* ✅ No extra space below the grid */
-    padding-bottom: 0;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  #projects {
-    margin-bottom: 0;     /* ✅ Prevent spacing between projects & contact */
-    padding-bottom: 0;
+  /* Project box spacing */
+  .project-box {
+    margin-bottom: 0 !important;
   }
 
+  /* Optional: tighten the section title margin */
+  #projects h1.section-title-left {
+    margin-bottom: 10px;
+  }
+
+  /* Contact section should appear immediately */
   #contact,
   .contact-section {
-    padding-top: 20px;    /* ✅ Bring contact closer */
+    margin-top: 10px !important;
+    padding-top: 20px !important;
+  }
+
+  /* Optional: remove scroll reveal animation spacing */
+  [data-aos] {
+    margin-bottom: 0 !important;
   }
 }
 
