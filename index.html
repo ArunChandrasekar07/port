@@ -2166,7 +2166,24 @@ body {
     font-size: 1.2rem;
   }
 }
-
+.project-box {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  max-width: 600px; /* ✅ Prevents full-width stretching */
+  margin: 0 auto;    /* ✅ Centers if only one card */
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.project-box img {
+  height: 250px;
+}
   </style>
 </head>
 <body>
@@ -2482,23 +2499,7 @@ body {
       </div>
     </a>
 
-    <!-- Project 2 -->
-    <a href="https://yourproject2.netlify.app" class="project-box" target="_blank">
-      <img src="images/project2.png" alt="QuizSphere">
-      <div class="project-info">
-        <h3>QuizSphere</h3>
-        <p>Dynamic NPTEL quiz platform with interactive features</p>
-      </div>
-    </a>
-
-    <!-- Project 3 -->
-    <a href="https://toc-regex.netlify.app" class="project-box" target="_blank">
-      <img src="images/project3.png" alt="Regex Converter">
-      <div class="project-info">
-        <h3>Regex to NFA/DFA Converter</h3>
-        <p>Convert regex to automata with visual representation</p>
-      </div>
-    </a>
+    
 
   </div>
 </section>
@@ -2506,7 +2507,6 @@ body {
 
 
   <!-- Contact -->
-  <!-- CONTACT SECTION -->
 <section class="contact-section" id="contact">
     <h1 class="section-title-left" data-aos="fade-right" data-aos-delay="100">
   <span class="latest-underline white-text">Conatct</span>
@@ -2763,7 +2763,5 @@ body {
     }
   });
 </script>
-
-
 </body>
 </html>
