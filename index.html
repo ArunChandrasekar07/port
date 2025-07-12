@@ -2271,7 +2271,48 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0, 224, 255, 0.4); /* Glow on all sides using #00e0ff */
 }
+/* Base styling */
+.contact-info {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  transition: 0.4s ease;
+  padding: 8px 12px;
+  border-left: 1px solid transparent;
+  border-radius: 6px;
+}
 
+/* Icon styling */
+.contact-info i {
+  font-size: 1.4rem;
+  color: #00e0ff;
+  margin-right: 12px;
+  transition: 0.4s ease;
+}
+
+/* Hover effect: icon glow and bounce */
+.contact-info:hover {
+  color: #fff;
+  background: rgba(0, 224, 255, 0.08);
+  border-left: 3px solid #00e0ff;
+  transform: translateX(6px);
+  box-shadow: 0 0 12px rgba(0, 224, 255, 0.2);
+}
+
+.contact-info:hover i {
+  color: #00e0ff;
+  animation: bounceIcon 0.6s ease;
+}
+
+/* Icon bounce keyframes */
+@keyframes bounceIcon {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.3); }
+  60%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
 
   </style>
 </head>
@@ -2604,9 +2645,16 @@ body {
       <p>Have a project in mind, want to collaborate, or just say hi?  
         Feel free to reach out through any of the platforms below or drop a message.
       </p>
-      <div class="contact-info"><i class="fas fa-map-marker-alt"></i> Vellore, Tamil Nadu</div>
-      <div class="contact-info"><i class="fas fa-envelope"></i> arun.portfolio@gmail.com</div>
-      <div class="contact-info"><i class="fas fa-phone"></i> +91 9876543210</div>
+<div class="contact-info wow-icon">
+  <i class="fas fa-map-marker-alt"></i> Vellore, Tamil Nadu
+</div>
+<div class="contact-info wow-icon">
+  <i class="fas fa-envelope"></i> arunchandruselvi@gmail.com
+</div>
+<div class="contact-info wow-icon">
+  <i class="fas fa-phone"></i> +91 6374544881
+</div>
+
 
       <div class="social-icons">
         <a href="#" class="github" title="GitHub"><i class="fab fa-github"></i></a>
@@ -2626,7 +2674,10 @@ body {
   </div>
 
   <!-- Copyright -->
-  <p class="contact-footer">© 2025 Arun C. All rights reserved.</p>
+  <br>
+  <br>
+
+<p class="contact-footer">© 2025 Arun C. All rights reserved.</p>
 
 </section>
 <!-- Scroll to Top Button -->
