@@ -2166,24 +2166,45 @@ body {
     font-size: 1.2rem;
   }
 }
-.project-box {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  max-width: 600px; /* ✅ Prevents full-width stretching */
-  margin: 0 auto;    /* ✅ Centers if only one card */
-}
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
-.project-box img {
-  height: 250px;
+
+/* Card Styling */
+.project-box {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  width: 100%;          /* 👈 Let it fill available column */
+  max-width: 450px;     /* 👈 Limit max width on desktop */
 }
+
+/* Optional: Align left even with one card */
+.project-grid {
+  justify-content: start;  /* 👈 Aligns boxes to the left */
+}
+
+/* Image Styling */
+.project-box img {
+  width: 100%;        /* Ensures image fills box */
+  height: 240px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .project-box {
+    max-width: 100%;
+  }
+
+  .project-grid {
+    justify-content: center; /* optional for better mobile centering */
+  }
+}
+
   </style>
 </head>
 <body>
