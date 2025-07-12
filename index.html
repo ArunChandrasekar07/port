@@ -2295,11 +2295,14 @@ body {
 /* Hover effect: icon glow and bounce */
 .contact-info:hover {
   color: #fff;
-  background: rgba(0, 224, 255, 0.08);
-  border-left: 3px solid #00e0ff;
-  transform: translateX(6px);
-  box-shadow: 0 0 12px rgba(0, 224, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02); /* very subtle blur feel */
+  border-left: 2px solid #00e0ff;        /* sleek line */
+  transform: translateX(4px);
+  box-shadow: 0 0 8px rgba(0, 224, 255, 0.15); /* soft glow */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
+
 
 .contact-info:hover i {
   color: #00e0ff;
@@ -2711,7 +2714,7 @@ body {
   <br>
   <br>
 
-<p class="contact-footer">© 2025 Arun C. All rights reserved.</p>
+<p class="contact-footer">© 2025 Arun. All rights reserved.</p>
 
 </section>
 <!-- Scroll to Top Button -->
