@@ -2225,37 +2225,51 @@ body {
   transform: translateY(0) scale(1.03);
 }
 
-@media (max-width: 768px) {
-  /* Remove bottom space from project section */
-  #projects,
-  .project-grid {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+.project-box {
+    max-width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
   }
 
-  /* Project box spacing */
-  .project-box {
-    margin-bottom: 0 !important;
+  .project-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+    border-radius: 0; /* prevent image corners clashing with box radius */
   }
 
-  /* Optional: tighten the section title margin */
-  #projects h1.section-title-left {
-    margin-bottom: 10px;
+  .project-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    color: white;
+    padding: 20px;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30%) scale(1);
   }
 
-  /* Contact section should appear immediately */
-  #contact,
-  .contact-section {
-    margin-top: 10px !important;
-    padding-top: 20px !important;
+  .project-box:hover {
+    transform: scale(1.03);
   }
 
-  /* Optional: remove scroll reveal animation spacing */
-  [data-aos] {
-    margin-bottom: 0 !important;
+  .project-box:hover img {
+    transform: scale(1.08);
+  }
+
+  .project-box:hover .project-info {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
   }
 }
-
+.project-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.4); /* Glow on all sides using #00e0ff */
+}
 .project-box:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0, 224, 255, 0.4); /* Glow on all sides using #00e0ff */
