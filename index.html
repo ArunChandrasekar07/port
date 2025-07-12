@@ -2313,6 +2313,37 @@ body {
   60%  { transform: scale(0.95); }
   100% { transform: scale(1); }
 }
+.timeline-item .content {
+  position: relative;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);         /* frosted glass */
+  border: 1px solid #00e0ff;                     /* neon border */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 0 14px rgba(0, 255, 213, 0.08);   /* soft glow */
+  color: #ccc;
+  transition: 0.4s ease;
+}
+.timeline-item .content:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 0 24px rgba(0, 224, 255, 0.25);
+  color: #fff;
+}
+
+
+/* Only add logo without changing anything else */
+.edu-corner-logo {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 8px;
+  pointer-events: none;
+}
 
   </style>
 </head>
@@ -2501,21 +2532,18 @@ body {
   </div>
 </section>
 
-
-  <!-- Education -->
-  
-   <section class="education-section" id="education" data-aos="fade-up">
-<h2 class="section-title-left" data-aos="fade-right" data-aos-delay="100">
-  <span class="latest-underline">Education</span> <span class="theme-text">Journey</span>
-</h2>
-
-
-
+   <!-- Education -->
+<section class="education-section" id="education" data-aos="fade-up">
+  <h2 class="section-title-left" data-aos="fade-right" data-aos-delay="100">
+    <span class="latest-underline">Education</span> <span class="theme-text">Journey</span>
+  </h2>
 
   <div class="timeline">
+
     <div class="timeline-item">
       <div class="circle"></div>
       <div class="content">
+        <img src="vit.jpeg" alt="VIT Logo" class="edu-corner-logo">
         <span class="year">Aug 2023 – Present</span>
         <h3>Master of Technology – Integrated M.Tech Software Engineering</h3>
         <p class="institute">Vellore Institute Of Technology, VIT Vellore</p>
@@ -2526,6 +2554,7 @@ body {
     <div class="timeline-item">
       <div class="circle"></div>
       <div class="content">
+        <img src="sda.png" alt="SDA Logo" class="edu-corner-logo">
         <span class="year">Jun 2021 – Mar 2023</span>
         <h3>Higher Secondary School Education</h3>
         <p class="institute">Seventh Day Adventist Higher Secondary School, Vellore</p>
@@ -2536,13 +2565,16 @@ body {
     <div class="timeline-item">
       <div class="circle"></div>
       <div class="content">
+        <img src="sda.png" alt="SDA Logo" class="edu-corner-logo">
         <span class="year">Jun 2011 – Mar 2021</span>
         <h3>Secondary School Education</h3>
         <p class="institute">Seventh Day Adventist Higher Secondary School, Vellore</p>
-        <p></p>
       </div>
     </div>
+
+  </div>
 </section>
+
 
 
 
@@ -2642,9 +2674,11 @@ body {
     <!-- Left Column -->
     <div class="contact-left" data-aos="fade-up" data-aos-delay="100">
       <h2>Let's work together.</h2>
-      <p>Have a project in mind, want to collaborate, or just say hi?  
-        Feel free to reach out through any of the platforms below or drop a message.
-      </p>
+      <p>
+  Let’s turn ideas into impact.  
+  Whether it's a project, a collab, or just a quick hello—reach out through the platforms below. I'm all ears!
+</p>
+
 <div class="contact-info wow-icon">
   <i class="fas fa-map-marker-alt"></i> Vellore, Tamil Nadu
 </div>
@@ -2657,10 +2691,10 @@ body {
 
 
       <div class="social-icons">
-        <a href="#" class="github" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" class="linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/ArunChandrasekar07" class="github" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/arun-chandrasekar-45903528b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
         <a href="#" class="twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/the.arun.07?igsh=MTB3bGhwZWY3ZzR3YQ==" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
 
@@ -2695,9 +2729,9 @@ body {
 <footer class="footer">
   <div class="footer-content">
     <div class="social-icons">
-      <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://instagram.com/your-username" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/ArunChandrasekar07" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/arun-chandrasekar-45903528b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/the.arun.07?igsh=MTB3bGhwZWY3ZzR3YQ==" target="_blank"><i class="fab fa-instagram"></i></a>
       
 </footer>
 
@@ -2898,7 +2932,5 @@ body {
     }
   });
 </script>
-
-
 </body>
 </html>
