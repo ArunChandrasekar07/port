@@ -1754,21 +1754,14 @@ body {
 }
 
 
-.content { 
-  background-color: #0f1c2f; /* fully solid background */
+.content {
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid #00e0ff;
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  color: #ffffff;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px #00f7ff20;
-  backdrop-filter: none !important; /* force remove blur if inherited */
-}
-
-
-.content{
-  background-color: #000000; /* or any dark matte color */
+  border-radius: 12px;
+  padding: 20px 25px;
+  backdrop-filter: blur(4px);
+  transition: 0.4s ease;
+  box-shadow: 0 0 12px rgba(0, 224, 255, 0.08);
 }
 
 .content:hover {
@@ -2376,6 +2369,12 @@ body {
   transform: scale(1.2);
   box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
 }
+.content {
+  background: #0f1c2f; /* solid matte background */
+;
+  text-align: center;
+}
+
 
   </style>
 </head>
